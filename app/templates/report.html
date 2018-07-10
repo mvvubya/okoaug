@@ -1,0 +1,516 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}
+    {% if add_report %}
+        Write Report
+    {% else %}
+        Edit Report
+    {% endif %}
+{% endblock %}
+{% block body %}
+
+<div class="container-fluid" style="padding-top: 70px">
+    <div class="row">
+        <div class="col-3">
+          {% include 'sidebar.html' %}
+        </div>
+        
+        <div class="col-md-9">
+            <div class="card">
+                {% if add_report %}
+                    <h4 class="card-header">Write Report</h4>
+                {% else %}
+                    <h4 class="card-header">Edit Report</h4>
+                {% endif %}
+                <div class="card-body">
+                    <form action="" method="POST">
+                    {{ form.hidden_tag() }}
+                <p> 
+                    {{ form.title.label }}
+                    <div class="form-label-group">
+                        <input type="text" name = "title" class="form-control" placeholder="Title, forexample: Department report June2018"  required autofocus>
+                    </div>
+                    {% for error in form.title.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <!--CEP sub form portion-->
+                {% if current_user.department_id==1 or current_user.department_id==8 %}
+                <p> 
+                    {{ form.education.label }}
+                    <div class="form-label-group">
+                        <textarea name = "education" class="form-control" placeholder="Education" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.education.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.pss.label }}
+                    <div class="form-label-group">
+                        <textarea name = "pss" class="form-control" placeholder="PSS" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.pss.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.livelihood.label }}
+                    <div class="form-label-group">
+                        <textarea name = "livelihood" class="form-control" placeholder="Livelihoods" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.livelihood.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.spiritual.label }}
+                    <div class="form-label-group">
+                        <textarea name = "spiritual" class="form-control" placeholder="Spiritual" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.spiritual.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.numhomevisit.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numhomevisit" class="form-control" placeholder="Number of Home visits" required autofocus>
+                    </div>
+                    {% for error in form.numhomevisit.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.homevisit.label }}
+                    <div class="form-label-group">
+                        <textarea name = "homevisit" class="form-control" placeholder="Home visits" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.homevisit.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                {% if current_user.department_id==1 %}
+                <p> 
+                    {{ form.donorbond.label }}
+                    <div class="form-label-group">
+                        <textarea name = "donorbond" class="form-control" placeholder="Sponsor/Donor relationship" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.donorbond.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                {% if current_user.department_id==1 or current_user.department_id==8 %}
+                <p> 
+                    {{ form.lifeskill.label }}
+                    <div class="form-label-group">
+                        <textarea name = "lifeskill" class="form-control" placeholder="Life skills" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.lifeskill.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--Bible School -->
+                {% if current_user.department_id==2 %}
+                <p> 
+                    {{ form.numschool.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numschool" class="form-control" placeholder="Number of Schools" required autofocus>
+                    </div>
+                    {% for error in form.numschool.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.numstud.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numstud" class="form-control" placeholder="Number of Students" required autofocus>
+                    </div>
+                    {% for error in form.numstud.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.student.label }}
+                    <div class="form-label-group">
+                        <textarea name = "student" class="form-control" placeholder="List Students" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.student.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.numchurch.label }}
+                    <div class="form-label-group">
+                        <input type="number"  name = "numchurch" class="form-control" placeholder="Number of Churches Planted" required autofocus>
+                    </div>
+                    {% for error in form.numchurch.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.church.label }}
+                    <div class="form-label-group">
+                        <textarea name = "church" class="form-control" placeholder="List the churches planted" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.church.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                
+                <!--#Community Devt form -->
+                {% if current_user.department_id==4 %}
+                <p> 
+                    {{ form.igas.label }}
+                    <div class="form-label-group">
+                        <textarea name = "igas" class="form-control" placeholder="IGAs carriedout in Kayiriti" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.igas.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.numloanstaken.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numloanstaken" class="form-control" placeholder="Loans taken" rows="10"  required autofocus>
+                    </div>
+                    {% for error in form.numloanstaken.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.numloansback.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numloansback" class="form-control" placeholder="Number of loans brought back" rows="10"  required autofocus>
+                    </div>
+                    {% for error in form.numloansback.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.notesonloans.label }}
+                    <div class="form-label-group">
+                        <textarea name = "notesonloans" class="form-control" placeholder="Notes on loans" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.notesonloans.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--#PWDs form-->
+                {% if current_user.department_id==5 %}
+                <p> 
+                    {{ form.trainings.label }}
+                    <div class="form-label-group">
+                        <textarea name = "trainings" class="form-control" placeholder="Trainings" rows="10"  required autofocus></textarea> 
+                    </div>
+                    {% for error in form.numloansback.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.newentrants.label }}
+                    <div class="form-label-group">
+                        <textarea name = "newentrants" class="form-control" placeholder="New Entrants" rows="10"  required autofocus></textarea> 
+                    </div>
+                    {% for error in form.newentrants.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.salestracking.label }}
+                    <div class="form-label-group">
+                        <textarea name = "salestracking" class="form-control" placeholder="Sales Tracking" rows="10"  required autofocus></textarea> 
+                    </div>
+                    {% for error in form.salestracking.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--#CD, PWDs-->
+                {% if current_user.department_id==4 or current_user.department_id==5 %}
+                <p> 
+                    {{ form.saving.label }}
+                    <div class="form-label-group">
+                        <textarea name = "saving" class="form-control" placeholder="Saving schemes" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.saving.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.dbspartnership.label }}
+                    <div class="form-label-group">
+                        <textarea name = "dbspartnership" class="form-control" placeholder="DBs partnerships" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.dbspartnership.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--#DBs-->
+                {% if current_user.department_id==9 %}
+                <p> 
+                    {{ form.numdbs.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numdbs" class="form-control" placeholder="Number of DBs" required autofocus>
+                    </div>
+                    {% for error in form.numdbs.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.numnewdbs.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numnewdbs" class="form-control" placeholder="Number of new DBs" required autofocus>
+                    </div>
+                    {% for error in form.numnewdbs.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.newdbs.label }}
+                    <div class="form-label-group">
+                        <textarea name = "newdbs" class="form-control" placeholder="New DBs formed" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.newdbs.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p> 
+                <p> 
+                    {{ form.attendance.label }}
+                    <div class="form-label-group">
+                        <textarea name = "attendance" class="form-control" placeholder="Average Attendance" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.newdbs.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>     
+                <p> 
+                    {{ form.schministries.label }}
+                    <div class="form-label-group">
+                        <textarea name = "schministries" class="form-control" placeholder="School Ministries" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.schministries.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.otherministries.label }}
+                    <div class="form-label-group">
+                        <textarea name = "otherministries" class="form-control" placeholder="Other Ministries" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.schministries.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>         
+                {% endif %}
+                <!--#BS, CD, PWDs, DBs-->
+                {% if current_user.department_id==2 or current_user.department_id==4 or current_user.department_id==5 or current_user.department_id==9 %}
+                <p> 
+                    {{ form.numfollowup.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numfollowup" class="form-control" placeholder="Number of followups done" required autofocus>
+                    </div>
+                    {% for error in form.numfollowup.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.notesfollowup.label }}
+                    <div class="form-label-group">
+                        <textarea name = "notesfollowup" class="form-control" placeholder="Notes on follow ups done" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.notesfollowup.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--#Risk Management form-->
+                {% if current_user.department_id==7  %}
+                <p> 
+                    {{ form.activities.label }}
+                    <div class="form-label-group">
+                        <textarea name = "activities" class="form-control" placeholder="Activities carriedout" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.activities.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.policies.label }}
+                    <div class="form-label-group">
+                        <textarea name = "policies" class="form-control" placeholder="Policies" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.policies.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.implementation.label }}
+                    <div class="form-label-group">
+                        <textarea name = "implementation" class="form-control" placeholder="Implementation" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.implementation.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--#Social Work form-->
+                {% if current_user.department_id==8 %}
+                <p> 
+                    {{ form.numchild.label }}
+                    <div class="form-label-group">
+                        <input type="number" name = "numchild" class="form-control" placeholder="Number of children" required autofocus>
+                    </div>
+                    {% for error in form.numchild.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.childphysicalhealth.label }}
+                    <div class="form-label-group">
+                        <textarea name = "childphysicalhealth" class="form-control" placeholder="Physical Health" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.childphysicalhealth.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.resettlement.label }}
+                    <div class="form-label-group">
+                        <textarea name = "resettlement" class="form-control" placeholder="Notes on follow ups done" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.resettlement.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.legalsupport.label }}
+                    <div class="form-label-group">
+                        <textarea name = "legalsupport" class="form-control" placeholder="Legal support" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.legalsupport.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.fostercare.label }}
+                    <div class="form-label-group">
+                        <textarea name = "fostercare" class="form-control" placeholder="Foster care" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.fostercare.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--#orphanage-->
+                {% if current_user.department_id==6 %}
+                <p> 
+                    {{ form.security.label }}
+                    <div class="form-label-group">
+                        <textarea name = "security" class="form-control" placeholder="Security" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.fostercare.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.childdiet.label }}
+                    <div class="form-label-group">
+                        <textarea name = "childdiet" class="form-control" placeholder="Children's Diet" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.childdiet.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.childsanitation.label }}
+                    <div class="form-label-group">
+                        <textarea name = "childsanitation" class="form-control" placeholder="Child Sanitation" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.childsanitation.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.childhealth.label }}
+                    <div class="form-label-group">
+                        <textarea name = "childhealth" class="form-control" placeholder="Children Health" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.childhealth.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <!--#RM-->
+                {% if current_user.department_id==7 %}
+                <p> 
+                    {{ form.activities.label }}
+                    <div class="form-label-group">
+                        <textarea name = "activities" class="form-control" placeholder="Activities" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.activities.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>  
+                <p> 
+                    {{ form.policies.label }}
+                    <div class="form-label-group">
+                        <textarea name = "policies" class="form-control" placeholder="Policies" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.policies.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>  
+                <p> 
+                    {{ form.implementation.label }}
+                    <div class="form-label-group">
+                        <textarea name = "implementation" class="form-control" placeholder="Implementation" rows="10"  required autofocus></textarea>
+                    </div>
+                    {% for error in form.implementation.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>   
+                {% endif %}
+                <!--General fields-->
+                <p> 
+                    {{ form.achieved.label }}
+                    <div class="form-label-group">
+                        <textarea name = "achieved" class="form-control" placeholder="Achievements" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.achieved.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.challenge.label }}
+                    <div class="form-label-group">
+                        <textarea name = "challenge" class="form-control" placeholder="Challenges" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.challenge.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p> 
+                    {{ form.othernote.label }}
+                    <div class="form-label-group">
+                        <textarea name = "othernote" class="form-control" placeholder="Other notes" rows="10" required autofocus></textarea>
+                    </div>
+                    {% for error in form.othernote.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p align="center"><button class="btn btn-lg btn-primary" type="submit">Submit to Supervisor</button></p>
+            </form> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

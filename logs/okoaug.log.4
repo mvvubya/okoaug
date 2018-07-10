@@ -1,0 +1,99 @@
+2018-07-09 20:11:51,528 ERROR: Exception on /report/add [POST] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 374, in _do_query
+    db.query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1366, "Incorrect integer value: 'TextArea' for column 'numloanstaken' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\okoaug\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\okoaug\app\routes.py", line 319, in add_report
+    db.session.commit()
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
+    self.transaction.commit()
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
+    self._prepare_impl()
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2254, in flush
+    self._flush(objects)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2380, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2344, in _flush
+    flush_context.execute()
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 374, in _do_query
+    db.query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1366, "Incorrect integer value: 'TextArea' for column 'numloanstaken' at row 1") [SQL: 'INSERT INTO report (title, education, pss, livelihood, spiritual, numhomevisit, homevisit, donorbond, lifeskill, numschool, numstud, student, numchurch, church, igas, numloanstaken, numloansback, trainings, newentrants, salestracking, saving, dbspartnership, numdbs, numnewdbs, newdbs, attendance, schministries, otherministries, numfollowup, notesfollowup, security, childdiet, childsanitation, childhealth, activities, policies, implementation, numchild, childphysicalhealth, resettlement, legalsupport, fostercare, achieved, challenge, othernote, timestamp, department_id, user_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'] [parameters: ('July Report', '', '', '', '', None, '', '', '', None, None, '', None, '', 'TextArea', 'TextArea', 'TextArea', '', '', '', 'TextArea', 'TextArea', None, None, '', '', '', '', 1, 'TextArea', '', '', '', '', '', '', '', None, '', '', '', '', 'TextArea', 'TextArea', 'TextArea', datetime.datetime(2018, 7, 9, 17, 11, 51, 525693), 4, 8)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-07-10 09:27:38,702 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-10 09:27:49,704 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-10 09:27:57,284 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]

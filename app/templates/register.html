@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block body %}
+	<div class="container-fluid" style="padding-top: 70px;">
+		{{ utils.flashed_messages() }}
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6" style="background-color: #f8f8f8">
+			<h3 style="text-align: center;">Register for an Account</h3>
+			<form action="" method="POST" novalidate>
+				{{ form.hidden_tag() }}
+				<p>	
+					<div class="form-label-group">
+	        			<input type="text" name = "first_name" class="form-control" placeholder= "First Name" required autofocus>
+      				</div>
+					{% for error in form.first_name.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					<div class="form-label-group">
+	        			<input type="text" name = "last_name" class="form-control" placeholder=" Last Name" required autofocus>
+      				</div>
+					{% for error in form.last_name.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					<div class="form-label-group">
+	        			<input type="text" name = "username" class="form-control" placeholder="Username" required autofocus>
+      				</div>
+					{% for error in form.username.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					<div class="form-label-group">
+	        			<input type="email" name = "email" class="form-control" placeholder="Email" required autofocus>
+      				</div>
+					{% for error in form.email.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="password" name = "password" class="form-control" placeholder="Password" required>
+      				</div>
+					{% for error in form.password.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="password" name = "password2" class="form-control" placeholder="Confirm Password" required>
+      				</div>
+					{% for error in form.password2.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p><button class="btn btn-primary" type="submit">Submit</button></p>
+			</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+
+{% endblock %}

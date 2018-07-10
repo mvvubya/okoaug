@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block body %}
+	<div class="container-fluid" style="padding-top: 70px;">
+		{{ utils.flashed_messages() }}
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+			<div class="card">
+			<h3 class = "card-header">Please Log In Here</h3>
+			<div class="card-body">
+			<form action="" method="POST" novalidate>
+				{{ form.hidden_tag() }}
+				<p>	
+					<div class="form-label-group">
+	        			<input type="text" name = "username" class="form-control" placeholder="Username" required autofocus>
+      				</div>
+					{% for error in form.username.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="password" name = "password" class="form-control" placeholder="Password" required>
+      				</div>
+					{% for error in form.password.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="checkbox mb-3">
+        			<label>
+          			{{ form.remember_me() }} Remember me
+        			</label>
+      				</div>
+      			</p>
+				<p><button class="btn btn-md btn-primary" type="submit">Login</button></p>
+				<br>
+		    	<p>New User? <a href="{{ url_for('register') }}">Register</a></p>
+		    	<p>
+		        Forgot Your Password?
+		        <a href="#">Click to Reset It</a>
+		    	</p>
+			</form>
+			</div>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+{% endblock %}

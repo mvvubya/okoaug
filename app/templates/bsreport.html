@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{%  block body %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6" style="background-color: #f0f0f5">
+			<h3 style="text-align: center;">Bible School Report</h3>
+			<form action="" method="POST">
+				{{ form.hidden_tag() }}
+				<p>	
+					<div class="form-label-group">
+	        			<input type="text" name = "title" class="form-control" placeholder="Title forexample: Bible School report June2018" required autofocus>
+      				</div>
+					{% for error in form.title.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					<div class="form-label-group">
+	        			<input type="number" name = "numschool" class="form-control" placeholder="Number of Schools" required autofocus>
+      				</div>
+					{% for error in form.numschool.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="number" name = "numstud" class="form-control" placeholder="Number of students" required>
+      				</div>
+					{% for error in form.numstud.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="textarea" name = "student" class="form-control" placeholder="List students" required>
+      				</div>
+					{% for error in form.student.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="number" name = "numchurch" class="form-control" placeholder="Number of Churches planted" required>
+      				</div>
+					{% for error in form.numchurch.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="textarea" name = "church" class="form-control" placeholder="List Churches planted" required>
+      				</div>
+					{% for error in form.church.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="number" name = "numfollowup" class="form-control" placeholder="Number of follows done" required>
+      				</div>
+					{% for error in form.numfollowup.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="textarea" name = "notesfollowup" class="form-control" placeholder="Brief Notes about follow ups" required>
+      				</div>
+					{% for error in form.notesfollowup.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="textarea" name = "achieved" class="form-control" placeholder="Achievements" required>
+      				</div>
+					{% for error in form.achieved.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="textarea" name = "challenge" class="form-control" placeholder="Challenges" required>
+      				</div>
+					{% for error in form.challenge.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>
+					<div class="form-label-group">
+	        			<input type="textarea" name = "othernote" class="form-control" placeholder="Other notes" required>
+      				</div>
+					{% for error in form.othernote.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p><button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button></p>
+			</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+	<hr>
+	
+
+{% endblock %}

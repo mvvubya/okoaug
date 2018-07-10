@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<div class="container-fluid center" style="padding-top: 70px;">
+		<h1>Fordidden</h1>
+		<hr class="intro-divider">
+		<h3>You do not have sufficient permissions to access this page.</h3>
+		<p><a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
+			<i class="fa fa-home"></i>
+			Home
+			</a>
+		</p>
+	<div class="container-fluid" style="padding-top: 70px;">
+{% endblock %}

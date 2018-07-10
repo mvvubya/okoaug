@@ -1,0 +1,31 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}
+    {% if add_department %}
+        Add Department
+    {% else %}
+        Edit Department
+    {% endif %}
+{% endblock %}
+{% block body %}
+<div class="container-fluid" style="padding-top: 70px">
+    <div class="row">
+        <div class="col-3">
+          {% include 'sidebar.html' %}
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                {% if add_department %}
+                    <h4 class="card-header">Add Department</h4>
+                {% else %}
+                    <h4 class="card-header">Edit Department</h4>
+                {% endif %}
+                <div class="card-body">
+                    {{ wtf.quick_form(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

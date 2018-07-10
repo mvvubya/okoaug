@@ -1,0 +1,110 @@
+2018-06-30 12:19:29,851 ERROR: Exception on /report/add [GET] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\okoaug\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\okoaug\app\routes.py", line 324, in add_report
+    return render_template('report.html', form = form, action="Add", add_report=add_report, title='Write Report')
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\okoaug\app\templates\report.html", line 485, in template
+    {% endblock %}
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 213, in parse_if
+    'name:endif'))
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 144, in parse_statement
+    self.fail_unknown_tag(token.value, token.lineno)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 97, in fail_unknown_tag
+    return self._fail_ut_eof(name, self._end_token_stack, lineno)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2018-06-30 12:25:17,803 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 12:39:04,339 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 12:46:54,721 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 12:47:49,677 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 12:51:16,185 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 13:16:01,536 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 13:18:21,965 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 13:21:54,506 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 13:26:44,483 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 13:42:56,428 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 13:47:26,735 ERROR: Exception on /report/edit/17 [GET] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\okoaug\app\routes.py", line 344, in edit_report
+    return render_template('edit_report.html', title='Edit Report')
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: edit_report.html
+2018-06-30 17:10:34,763 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-06-30 17:11:37,212 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]

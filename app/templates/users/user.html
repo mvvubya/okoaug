@@ -1,0 +1,27 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container-fluid" style="padding-top: 70px">
+      <div class="row">
+        <div class="col-3">
+          {% include 'sidebar.html' %}
+        </div>
+      <div class="col-md-9">
+        <div class="card">
+            <h4 class="card-header"> Assign Departments and Roles </h4>
+            <div class="card-body">
+            <p>
+                Select a department and role to assign to
+                <span style="color: #aec251;">
+                    {{ user.first_name }} {{ user.last_name }}
+                </span>
+            </p>
+            <br/>
+            {{ wtf.quick_form(form) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

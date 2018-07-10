@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{%  block body %}
+	<div class="container-fluid" style="padding-top: 70px">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8" style="background-color: #f0f0f5">
+			<h3 style="text-align: center;">CEP Report</h3>
+			<form action="" method="POST" novalidate>
+				{{ form.hidden_tag() }}
+				<p>	
+					{{ form.title.label }}
+					<div class="form-label-group">
+	        			<input type="text" name = "title" class="form-control" placeholder="Title, forexample: CEP report June2018"  required autofocus>
+      				</div>
+					{% for error in form.title.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.education.label }}
+					<div class="form-label-group">
+	        			<textarea name = "education" class="form-control" placeholder="Education" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.education.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.pss.label }}
+					<div class="form-label-group">
+	        			<textarea name = "pss" class="form-control" placeholder="PSS" rows="10"  required autofocus></textarea>
+      				</div>
+					{% for error in form.pss.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.livelihood.label }}
+					<div class="form-label-group">
+	        			<textarea name = "livelihood" class="form-control" placeholder="Livelihoods" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.livelihood.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.spiritual.label }}
+					<div class="form-label-group">
+	        			<textarea name = "spiritual" class="form-control" placeholder="Spiritual" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.spiritual.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.homevisit.label }}
+					<div class="form-label-group">
+	        			<textarea name = "homevisit" class="form-control" placeholder="Home visits" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.homevisit.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.donorbond.label }}
+					<div class="form-label-group">
+	        			<textarea name = "donorbond" class="form-control" placeholder="Sponsor/Donor relationship" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.donorbond.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.lifeskill.label }}
+					<div class="form-label-group">
+	        			<textarea name = "lifeskill" class="form-control" placeholder="Life skills" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.lifeskill.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.achieved.label }}
+					<div class="form-label-group">
+	        			<textarea name = "achieved" class="form-control" placeholder="Achievements" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.achieved.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.challenge.label }}
+					<div class="form-label-group">
+	        			<textarea name = "challenge" class="form-control" placeholder="Challenges" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.challenge.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p>	
+					{{ form.othernote.label }}
+					<div class="form-label-group">
+	        			<textarea name = "othernote" class="form-control" placeholder="Other notes" rows="10" required autofocus></textarea>
+      				</div>
+					{% for error in form.othernote.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+				<p align="center"><button class="btn btn-lg btn-primary" type="submit">Submit to Supervisor</button></p>
+			</form>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+	<hr>
+{% endblock %}

@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block body %}
+  <head>
+    <style>
+    p{
+    border:1px solid #e0ebeb; 
+    padding: 0.5em;
+    font-weight: 80;
+    border-radius:5px;
+    }
+    </style>
+  </head>
+  <div class="container-fluid" style="padding-top: 70px">
+      <div class="row">
+        <div class="col-3">
+          {% include 'sidebar.html' %}
+        </div>
+      <div class="col-md-9">
+        {{ utils.flashed_messages() }}
+        <div class="card">
+          <h4 class="card-header">View Report</h4>
+          <div class="card-body">
+            <h5>{{ report.title }}</h5>
+            <small>Submitted by: <b>{{ report.author.first_name}} {{ report.author.last_name}}</b> from <b>{{ report.department.name }}</b> department on {{ report.timestamp }}</small>
+            <hr>
+            <!--#CEP  -->
+            {% if report.education %}
+              <div>
+                <span>Education</span><br>
+                <p>{{ report.education }}</p>
+              </div>
+            {% endif %}
+            {% if report.pss %}
+              <div>
+                <span>PSS</span><br>
+                <p>{{ report.pss }}</p>
+              </div>
+            {% endif %}
+            {% if report.livelihood %}
+              <div>
+                <span>Livelihood</span><br>
+                <p>{{ report.livelihood }}</p>
+              </div>
+            {% endif %}
+            {% if report.spiritual %}
+              <div>
+                <span>Spiritual</span><br>
+                <p>{{ report.spiritual }}</p>
+              </div>
+            {% endif %}
+            {% if report.numhomevisit %}
+              <div>
+                <span>Number of Homevisits</span><br>
+                <p>{{ report.numhomevisit }}</p>
+              </div>
+            {% endif %}
+            {% if report.homevisit %}
+              <div>
+                <span>Home visits</span><br>
+                <p>{{ report.homevisit }}</p>
+              </div>
+            {% endif %}
+            {% if report.donorbond %}
+              <div>
+                <span>Sponsor/Donor relationship</span><br>
+                <p>{{ report.donorbond }}</p>
+              </div>
+            {% endif %}
+            {% if report.lifeskill %}
+              <div>
+                <span>Life Skills</span><br>
+                <p>{{ report.lifeskill }}</p>
+              </div>
+            {% endif %}
+
+              <!--# Bible School-->
+            {% if report.numschool %}
+              <div>
+                <span>Number of Schools</span><br>
+                <p>{{ report.numschool }}</p>
+              </div>
+            {% endif %}
+            {% if report.numstud %}
+              <div>
+                <span>Number of Students</span><br>
+                <p>{{ report.numstud }}</p>
+              </div>
+            {% endif %}
+            {% if report.student %}
+              <div>
+                <span>Students</span><br>
+                <p>{{ report.student }}</p>
+              </div>
+            {% endif %}
+            {% if report.numchurch %}
+              <div>
+                <span>Churches planted</span><br>
+                <p>{{ report.numchurch }}</p>
+              </div>
+            {% endif %}
+            {% if report.church %}
+              <div>
+                <span>Churches</span><br>
+                <p>{{ report.church }}</p>
+              </div>
+            {% endif %}
+
+            <!--#Community Development-->
+            {% if report.igas %}
+              <div>
+                <span>IGAs carriedout in Kayirikiti</span><br>
+                <p>{{ report.igas }}</p>
+              </div>
+            {% endif %}
+            {% if report.numloanstaken %}
+              <div>
+                <span>Number of Loans taken</span><br>
+                <p>{{ report.numloanstaken }}</p>
+              </div>
+            {% endif %}
+            {% if report.numloansback %}
+              <div>
+                <span>Number of Loans back</span><br>
+                <p>{{ report.numloansback }}</p>
+              </div>
+            {% endif %}
+            {% if report.notesonloans %}
+              <div>
+                <span>Notes on Loans</span><br>
+                <p>{{ report.notesonloans }}</p>
+              </div>
+            {% endif %}
+
+            <!--#PWDs-->
+            {% if report.trainings %}
+              <div>
+                <span>Trainings carried out</span><br>
+                <p>{{ report.trainings }}</p>
+              </div>
+            {% endif %}
+            {% if report.newentrants %}
+              <div>
+                <span>New entrants</span><br>
+                <p>{{ report.newentrants }}</p>
+              </div>
+            {% endif %}
+            {% if report.salestracking %}
+              <div>
+                <span>Sales tracking</span><br>
+                <p>{{ report.salestracking }}</p>
+              </div>
+            {% endif %}
+
+            <!--#DBs-->
+            {% if report.numdbs %}
+              <div>
+                <span>Number of DBs</span><br>
+                <p>{{ report.numdbs }}</p>
+              </div>
+            {% endif %}
+            {% if report.numnewdbs %}
+              <div>
+                <span>Number of new DBs</span><br>
+                <p>{{ report.numnewdbs }}</p>
+              </div>
+            {% endif %}
+            {% if report.newdbs %}
+              <div>
+                <span>New DBs</span><br>
+                <p>{{ report.newdbs }}</p>
+              </div>
+            {% endif %}
+            {% if report.attendance %}
+              <div>
+                <span>Average Attendance</span><br>
+                <p>{{ report.attendance }}</p>
+              </div>
+            {% endif %}
+            {% if report.schministries %}
+              <div>
+                <span>School Ministries</span><br>
+                <p>{{ report.schministries }}</p>
+              </div>
+            {% endif %}
+            {% if report.otherministries %}
+              <div>
+                <span>Other Ministries</span><br>
+                <p>{{ report.otherministries }}</p>
+              </div>
+            {% endif %}
+
+            <!--#BS, CD, PWDs, DBs-->
+            {% if report.numfollowup %}
+              <div>
+                <span>Number of followup</span><br>
+                <p>{{ report.numfollowup }}</p>
+              </div>
+            {% endif %}
+            {% if report.notesfollowup %}
+              <div>
+                <span>Notes on followups</span><br>
+                <p>{{ report.notesfollowup }}</p>
+              </div>
+            {% endif %}
+
+            <!--#orphanage-->
+            {% if report.security %}
+              <div>
+                <span>Security at the home</span><br>
+                <p>{{ report.security }}</p>
+              </div>
+            {% endif %}
+            {% if report.childdiet %}
+              <div>
+                <span>Diet at the home</span><br>
+                <p>{{ report.childdiet }}</p>
+              </div>
+            {% endif %}
+            {% if report.childsanitation %}
+              <div>
+                <span>Children Sanitation</span><br>
+                <p>{{ report.childsanitation }}</p>
+              </div>
+            {% endif %}
+            {% if report.childhealth %}
+              <div>
+                <span>Children Health</span><br>
+                <p>{{ report.childhealth }}</p>
+              </div>
+            {% endif %}
+            <!--#RM-->
+            {% if report.activities %}
+              <div>
+                <span>Activities carried out</span><br>
+                <p>{{ report.activities }}</p>
+              </div>
+            {% endif %}
+            {% if report.policies %}
+              <div>
+                <span>Policies</span><br>
+                <p>{{ report.policies }}</p>
+              </div>
+            {% endif %}
+            {% if report.implementation %}
+              <div>
+                <span>Implementation</span><br>
+                <p>{{ report.implementation }}</p>
+              </div>
+            {% endif %}
+            <!--#Social Work-->
+            {% if report.numchild %}
+              <div>
+                <span>Number of Children</span><br>
+                <p>{{ report.numchild }}</p>
+              </div>
+            {% endif %}
+            {% if report.childphysicalhealth %}
+              <div>
+                <span>Children's Physical Health</span><br>
+                <p>{{ report.childphysicalhealth }}</p>
+              </div>
+            {% endif %}
+            {% if report.resettlement %}
+              <div>
+                <span>Children's resettlement</span><br>
+                <p>{{ report.resettlement }}</p>
+              </div>
+            {% endif %}
+            {% if report.legalsupport %}
+              <div>
+                <span>Legal Support</span><br>
+                <p>{{ report.legalsupport }}</p>
+              </div>
+            {% endif %}
+            {% if report.fostercare %}
+              <div>
+                <span>Foster Care</span><br>
+                <p>{{ report.fostercare }}</p>
+              </div>
+            {% endif %}
+            {% if report.achieved %}
+              <div>
+                <span>Achievements</span><br>
+                <p>{{ report.achieved }}</p>
+              </div>
+            {% endif %}
+            {% if report.challenge %}
+              <div>
+                <span>Challenges</span><br>
+                <p>{{ report.challenge }}</p>
+              </div>
+            {% endif %}
+            {% if report.othernote %}
+              <div>
+                <span>Other notes</span><br>
+                <p>{{ report.othernote }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">Comments</div>
+            <div class="card-body">
+              {% if report.comment %}
+                {% if report.comment.count() > 0 %}
+                  <span style="color: blue;">Supervisor comments:
+                      <p>
+                        {% for comment in report.comment %}
+                            <p> {{ comment.body }}</p>
+                        {% endfor %}
+                      </p>
+                  </span>
+                {% else %}
+                    <div>No comments on this report</div><br>
+                {% endif %}
+              {% endif %}
+            </div>
+        </div>
+        <br>
+        {% if current_user.is_admin %}
+        <div class="card">
+                <div class="card-header">Add Comments here if any</div>
+                <div class="card-body">
+                <form method="POST" action="" novalidate>
+                    {{ form.hidden_tag() }}
+                    <div> 
+                        <div class="form-label-group">
+                            <textarea name = "body" class="form-control" placeholder="Comments here"  rows="10" required autofocus></textarea>
+                        </div>
+                        {% for error in form.body.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div><br> 
+                    <div align="center"><button class="btn btn-lg btn-primary" type="submit">Submit comment</button></div>      
+                </form>
+                </div>
+          </div>
+          {% endif %}    
+      </div>
+    </div>
+  </div>
+{% endblock %}

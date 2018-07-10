@@ -1,0 +1,150 @@
+2018-07-09 12:08:01,485 ERROR: Exception on /reports/view/3 [POST] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\okoaug\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\okoaug\app\routes.py", line 338, in view_details
+    return redirect(url_for('view_details'))
+  File "c:\okoaug\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\okoaug\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'view_details'. Did you forget to specify values ['id']?
+2018-07-09 17:54:06,039 ERROR: Exception on /reports/view/7 [POST] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\okoaug\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\okoaug\app\routes.py", line 338, in view_details
+    return redirect(url_for('view_details'))
+  File "c:\okoaug\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\okoaug\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'view_details'. Did you forget to specify values ['id']?
+2018-07-09 18:05:31,559 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 18:24:39,848 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 18:26:05,514 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 18:27:35,779 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 18:27:39,802 ERROR: Exception on /reports/view/1 [GET] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\okoaug\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\okoaug\app\routes.py", line 340, in view_details
+    return render_template('view_report.html', report = report, id=id, form=form, title='Report Details')
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\okoaug\app\templates\view_report.html", line 3, in top-level template code
+    {% import "bootstrap/wtf.html" as wtf %}
+  File "C:\okoaug\app\templates\base.html", line 61, in top-level template code
+    {% block body %}
+  File "C:\okoaug\app\templates\view_report.html", line 306, in block "body"
+    <p>{{ comment.user.first_name }} comments that: {{ comment.body }}</p>
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.models.Comment object' has no attribute 'user'
+2018-07-09 18:30:52,265 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:00:05,772 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:00:10,042 ERROR: Exception on /reports/view/1 [GET] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\okoaug\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\okoaug\app\routes.py", line 340, in view_details
+    return render_template('view_report.html', report = report, id=id, form=form, title='Report Details')
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\okoaug\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\okoaug\app\templates\view_report.html", line 3, in top-level template code
+    {% import "bootstrap/wtf.html" as wtf %}
+  File "C:\okoaug\app\templates\base.html", line 61, in top-level template code
+    {% block body %}
+  File "C:\okoaug\app\templates\view_report.html", line 304, in block "body"
+    Supervisor commented on: {{ comment.timestamp }}
+  File "c:\okoaug\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'comment' is undefined
+2018-07-09 19:01:24,234 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:02:06,165 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:19:38,397 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:36:49,530 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:39:32,971 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:39:50,226 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:40:02,116 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]
+2018-07-09 19:41:35,778 INFO: OKOA Programs startup [in C:\okoaug\app\__init__.py:49]

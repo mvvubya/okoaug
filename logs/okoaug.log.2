@@ -1,0 +1,76 @@
+2018-07-10 10:32:53,882 ERROR: Exception on /reports [GET] [in c:\okoaug\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 374, in _do_query
+    db.query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1054, "Unknown column 'report.notesonloans' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\okoaug\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\okoaug\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\okoaug\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\okoaug\app\routes.py", line 242, in list_reports
+    reports = Report.query.all()
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2783, in all
+    return list(self)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2935, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2958, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\okoaug\venv\lib\site-packages\sqlalchemy\engine\default.py", line 508, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\cursors.py", line 374, in _do_query
+    db.query(q)
+  File "c:\okoaug\venv\lib\site-packages\MySQLdb\connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1054, "Unknown column 'report.notesonloans' in 'field list'") [SQL: 'SELECT report.id AS report_id, report.title AS report_title, report.education AS report_education, report.pss AS report_pss, report.livelihood AS report_livelihood, report.spiritual AS report_spiritual, report.numhomevisit AS report_numhomevisit, report.homevisit AS report_homevisit, report.donorbond AS report_donorbond, report.lifeskill AS report_lifeskill, report.numschool AS report_numschool, report.numstud AS report_numstud, report.student AS report_student, report.numchurch AS report_numchurch, report.church AS report_church, report.igas AS report_igas, report.numloanstaken AS report_numloanstaken, report.numloansback AS report_numloansback, report.notesonloans AS report_notesonloans, report.trainings AS report_trainings, report.newentrants AS report_newentrants, report.salestracking AS report_salestracking, report.saving AS report_saving, report.dbspartnership AS report_dbspartnership, report.numdbs AS report_numdbs, report.numnewdbs AS report_numnewdbs, report.newdbs AS report_newdbs, report.attendance AS report_attendance, report.schministries AS report_schministries, report.otherministries AS report_otherministries, report.numfollowup AS report_numfollowup, report.notesfollowup AS report_notesfollowup, report.security AS report_security, report.childdiet AS report_childdiet, report.childsanitation AS report_childsanitation, report.childhealth AS report_childhealth, report.activities AS report_activities, report.policies AS report_policies, report.implementation AS report_implementation, report.numchild AS report_numchild, report.childphysicalhealth AS report_childphysicalhealth, report.resettlement AS report_resettlement, report.legalsupport AS report_legalsupport, report.fostercare AS report_fostercare, report.achieved AS report_achieved, report.challenge AS report_challenge, report.othernote AS report_othernote, report.timestamp AS report_timestamp, report.department_id AS report_department_id, report.user_id AS report_user_id \nFROM report'] (Background on this error at: http://sqlalche.me/e/e3q8)
